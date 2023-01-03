@@ -54,7 +54,6 @@ function displayBooks() {
     container.textContent = ''
 
     library.forEach((book, index) => {
-        // const para = document.createElement('p');
         const deleteBtn = document.createElement('button')
         const editBtn = document.createElement('button')
         const listContainer = document.createElement('div');
@@ -85,11 +84,10 @@ function displayBooks() {
         const readPara = document.createElement('p');
         readPara.className = 'is-read'
         readPara.textContent = book.isRead ? 'Already Read' : 'Not Read Yet';
+
         listContainer.appendChild(readPara);
-        // para.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.isRead ? 'already read' : 'not read yet'}`;
         listContainer.appendChild(editBtn)
         listContainer.appendChild(deleteBtn)
-        // listContainer.appendChild(para);
 
         container.appendChild(listContainer);
     });

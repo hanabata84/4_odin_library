@@ -7,6 +7,7 @@
 }
 
 body {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,13 +19,15 @@ h1 {
     color: #443D6C;
     font-weight: 700;
     font-size: 45px;
+    margin-bottom: 20px;
 }
 
 ul {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     list-style: none;
+    padding: 0 10px;
 }
 
 li {
@@ -43,18 +46,9 @@ button {
     margin-left: 5px;
 }
 
-.fa-trash {
-    color: white;
-    font-size: 1rem;
-}
-
-.fa-pen {
-    color: white;
-    font-size: 1rem;
-}
-
-.fa-book-open {
-    padding-right: 5px;
+p {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .main-cont {
@@ -67,15 +61,14 @@ button {
     padding: 30px 25px;
 }
 
-/* .sub-cont {
-    display: flex;
-    justify-content: space-between;
+/* #sub-cont {
+    width: 730px;
 } */
 
 .list-cont {
     display: flex;
     align-items: center;
-    width: 742px;
+    /* width: 742px; */
     height: 55px;
     background: #EAECEF;
     border-radius: 15px;
@@ -101,6 +94,20 @@ button {
     /* set a fixed width for these columns */
 }
 
+.fa-trash {
+    color: white;
+    font-size: 1rem;
+}
+
+.fa-pen {
+    color: white;
+    font-size: 1rem;
+}
+
+.fa-book-open {
+    padding-right: 5px;
+}
+
 #add-btn {
     font-weight: 700;
     font-size: 12px;
@@ -108,10 +115,6 @@ button {
     background: #665AA8;
     border: none;
     border-radius: 10px;
-    padding: 10px 18px;
-}
-
-p {
-    font-size: 14px;
-    font-weight: 600;
+    width: 95px;
+    margin: 0;
 }
