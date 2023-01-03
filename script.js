@@ -1,4 +1,4 @@
-const container = document.querySelector('div')
+const container = document.getElementById('sub-cont')
 const addBookBtn = document.getElementById('add-book')
 const form = document.querySelector('form')
 const titleInput = document.querySelector('input[placeholder="Title"]');
@@ -54,17 +54,44 @@ function displayBooks() {
     container.textContent = ''
 
     library.forEach((book, index) => {
-        const para = document.createElement('p');
+        // const para = document.createElement('p');
         const deleteBtn = document.createElement('button')
-        deleteBtn.textContent = 'Delete'
+        const editBtn = document.createElement('button')
+        const listContainer = document.createElement('div');
+
+        listContainer.className = 'list-cont';
+        editBtn.innerHTML = '<i class="fas fa-pen"></i>'
+        deleteBtn.innerHTML = '<i class="fas fa-trash"></i>'
+
         deleteBtn.addEventListener('click', () => {
-            console.log(index)
             library.splice(index, 1)
             displayBooks()
         })
-        para.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.isRead ? 'already read' : 'not read yet'}`;
-        para.appendChild(deleteBtn)
-        container.appendChild(para);
+        const titlePara = document.createElement('p')
+        titlePara.className = 'title'
+        titlePara.textContent = book.title
+        listContainer.appendChild(titlePara)
+
+        const authorPara = document.createElement('p');
+        authorPara.className = 'author'
+        authorPara.textContent = book.author;
+        listContainer.appendChild(authorPara);
+
+        const pagesPara = document.createElement('p');
+        pagesPara.className = 'pages'
+        pagesPara.innerHTML = `<i class="fas fa-duotone fa-book-open"></i>${book.pages} pages`;
+        listContainer.appendChild(pagesPara);
+
+        const readPara = document.createElement('p');
+        readPara.className = 'is-read'
+        readPara.textContent = book.isRead ? 'Already Read' : 'Not Read Yet';
+        listContainer.appendChild(readPara);
+        // para.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.isRead ? 'already read' : 'not read yet'}`;
+        listContainer.appendChild(editBtn)
+        listContainer.appendChild(deleteBtn)
+        // listContainer.appendChild(para);
+
+        container.appendChild(listContainer);
     });
 }
 

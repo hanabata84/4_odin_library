@@ -7,15 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a3fc7c93e2.js" crossorigin="anonymous"></script>
     <title>Odin Book Library</title>
 </head>
 
 <body>
     <h1>Book Library</h1>
-    <div></div>
+    <div class="main-cont">
+        <ul>
+            <li>Title</li>
+            <li>Author</li>
+            <li>Pages</li>
+            <li>Shelf</li>
+            <button id="add-btn">Add Book</button>
+        </ul>
+        <div id="sub-cont">
+            <div class="list-cont"></div>
+        </div>
+    </div>
     <form>
         <input type="text" placeholder="Title">
         <input type="text" placeholder="Author">
