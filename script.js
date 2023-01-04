@@ -6,6 +6,11 @@ const authorInput = document.querySelector('input[placeholder="Author"]');
 const pagesInput = document.querySelector('input[placeholder="Pages"]');
 const isReadInput = document.querySelector('input[type="checkbox"]');
 
+// The modal
+const openModalBtn = document.getElementById('open-modal')
+const addBookModal = document.getElementById('addBookModal')
+const closeModal = document.getElementById('closeModal')
+
 const library = [
     {
         title: 'Game of Thrones',
@@ -35,6 +40,14 @@ class Book {
         this.isRead = isRead
     }
 }
+
+openModalBtn.addEventListener('click', () => {
+    addBookModal.style.display = 'block'
+})
+
+closeModal.addEventListener('click', () => {
+    addBookModal.style.display = 'none'
+})
 
 addBookBtn.addEventListener('click', () => {
     event.preventDefault(); // prevent the form from being submitted
