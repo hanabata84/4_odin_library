@@ -46,8 +46,12 @@ openModalBtn.addEventListener('click', () => {
 })
 
 closeModal.addEventListener('click', () => {
-    addBookModal.style.display = 'none'
+    closeAddModal()
 })
+
+function closeAddModal() {
+    addBookModal.style.display = 'none'
+}
 
 addBookBtn.addEventListener('click', () => {
     event.preventDefault(); // prevent the form from being submitted
@@ -61,6 +65,7 @@ addBookBtn.addEventListener('click', () => {
     console.log(library);
     displayBooks()
     clearForm()
+    closeAddModal()
 })
 
 function displayBooks() {

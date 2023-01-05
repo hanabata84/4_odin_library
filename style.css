@@ -149,10 +149,19 @@ p {
     font-size: 12px;
     color: #FFFFFF;
     background: #665AA8;
-    border: none;
+
+    border: solid 1px #665AA8;
     border-radius: 10px;
     width: 95px;
     margin: 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+#open-modal:hover {
+    background-color: white;
+    border: solid 1px #665AA8;
+    color: #665AA8;
+    transform: scale(1.04);
 }
 
 #add-book {
@@ -160,10 +169,19 @@ p {
     height: 55px;
     background: #665AA8;
     border-radius: 10px;
+    border: solid 1px #665AA8;
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 15px;
     margin-top: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+#add-book:hover {
+    background-color: white;
+    border: solid 1px #665AA8;
+    color: #665AA8;
+    transform: scale(1.01);
 }
 
 /* Modal Styles */
