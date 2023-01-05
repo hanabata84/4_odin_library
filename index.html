@@ -16,26 +16,48 @@
 
 <body>
     <h1>Book Library</h1>
+
+    <!-- Book Table -->
     <div class="main-cont">
         <ul>
             <li class="title">Title</li>
             <li class="author">Author</li>
             <li class="pages">Pages</li>
             <li class="is-read">Shelf</li>
-            <button id="add-btn">Add Book</button>
+            <button id="open-modal">Add Book</button>
         </ul>
         <div id="sub-cont">
             <div class="list-cont"></div>
         </div>
     </div>
-    <form>
-        <input type="text" placeholder="Title">
-        <input type="text" placeholder="Author">
-        <input type="text" placeholder="Pages">
-        <label for="isRead">Read:</label>
-        <input type="checkbox" id="isRead">
-        <button id="add-book">Add Book</button>
-    </form>
+
+    <!-- Modal Add Book -->
+    <div class="modal" id="addBookModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add a New Book</h2>
+                <!-- <span class="close" id="closeModal">&times;</span> -->
+                <!-- <button id="close-modal"><i class="fas fa-times"></i></button> -->
+                <i class="fas fa-times" id="closeModal"></i>
+            </div>
+            <div class="modal-body">
+                <!-- Form content -->
+                <form>
+                    <input type="text" placeholder="Title">
+                    <input type="text" placeholder="Author">
+                    <input type="text" placeholder="Pages">
+                    <div class="checkbox-cont">
+                        <label for="isRead">Have you read this book?</label>
+                        <input type="checkbox" id="isRead">
+                    </div>
+                    <button id="add-book">Add Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
 <script src="script.js"></script>
 
