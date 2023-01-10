@@ -28,7 +28,6 @@ h2 {
 
 ul {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     list-style: none;
     padding: 0 10px;
@@ -65,14 +64,9 @@ p {
     padding: 30px 25px;
 }
 
-/* #sub-cont {
-    width: 730px;
-} */
-
 .list-cont {
     display: flex;
     align-items: center;
-    /* width: 742px; */
     height: 55px;
     background: #EAECEF;
     border-radius: 15px;
@@ -83,19 +77,20 @@ p {
 .title {
     width: 200px;
     padding-right: 15px;
-    overflow: hidden;
+
     /* hide any overflow */
-    text-overflow: ellipsis;
+    overflow: hidden;
     /* show an ellipsis to indicate that there is more text */
-    white-space: nowrap;
+    text-overflow: ellipsis;
     /* prevent the text from wrapping to the next line */
+    white-space: nowrap;
 }
 
 .author,
 .pages,
 .is-read {
-    width: 150px;
     /* set a fixed width for these columns */
+    width: 150px;
 }
 
 .fa-trash {
@@ -112,7 +107,7 @@ p {
     padding-right: 5px;
 }
 
-/* Close Button */
+/* Close Modal Button */
 .fa-times {
     color: white;
     font-size: 1.5rem;
@@ -133,17 +128,7 @@ p {
     transform: scale(1.1);
 }
 
-#close-modal {
-    border-radius: 50%;
-    padding: 5px 9px;
-}
-
-#close-modal:hover {
-    background-color: white;
-    border: solid 1px #FC89AE;
-    color: #FC89AE;
-}
-
+/* Open Modal Button */
 #open-modal {
     font-weight: 700;
     font-size: 12px;
@@ -164,6 +149,7 @@ p {
     transform: scale(1.04);
 }
 
+/* Add Book Button */
 #add-book {
     width: 400px;
     height: 55px;
@@ -210,10 +196,11 @@ p {
 /* Modal Content */
 .modal-content {
     background-color: #FFFFFF;
+
     /* 15% from the top and centered */
     margin: 9% auto;
     padding: 20px;
-    /* Could be more or less, depending on screen size */
+
     width: 500px;
     height: 482px;
     border: 10px solid #CBD2E2;
@@ -234,20 +221,7 @@ p {
     margin-bottom: 25px;
 }
 
-/* Close Button */
-/* .close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-} */
-
+/* Add Book Form */
 form {
     display: flex;
     flex-direction: column;
