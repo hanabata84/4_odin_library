@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a3fc7c93e2.js" crossorigin="anonymous"></script>
-    <title>Odin Book Library</title>
+    <title>Book Library</title>
 </head>
 
 <body>
@@ -36,13 +43,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Add a New Book</h2>
-                <!-- <span class="close" id="closeModal">&times;</span> -->
-                <!-- <button id="close-modal"><i class="fas fa-times"></i></button> -->
-                <i class="fas fa-times" id="closeModal"></i>
+                <i class="fas fa-times" id="closeModal-add"></i>
             </div>
             <div class="modal-body">
+
                 <!-- Form content -->
-                <form>
+                <form id="add-form">
                     <input type="text" placeholder="Title">
                     <input type="text" placeholder="Author">
                     <input type="text" placeholder="Pages">
@@ -56,7 +62,29 @@
         </div>
     </div>
 
+    <!-- Modal Edit Book -->
+    <div class="modal" id="editBookModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Book</h2>
+                <i class="fas fa-times" id="closeModal-edit"></i>
+            </div>
+            <div class="modal-body">
 
+
+                <form id="edit-form">
+                    <input type="text" placeholder="Title" id="edit-title">
+                    <input type="text" placeholder="Author" id="edit-author">
+                    <input type="text" placeholder="Pages" id="edit-pages">
+                    <div class="checkbox-cont">
+                        <label for="isRead">Have you read this book?</label>
+                        <input type="checkbox" id="isReadEdit">
+                    </div>
+                    <button id="edit-book">Edit Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 <script src="script.js"></script>
