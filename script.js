@@ -1,8 +1,9 @@
 const container = document.getElementById('sub-cont')
 const addBookBtn = document.getElementById('add-book')
+const editBookBtn = document.getElementById('edit-book')
 
 // Form Elements
-const form = document.querySelector('form')
+const addForm = document.getElementById('add-form')
 const titleInput = document.querySelector('input[placeholder="Title"]');
 const authorInput = document.querySelector('input[placeholder="Author"]');
 const pagesInput = document.querySelector('input[placeholder="Pages"]');
@@ -11,7 +12,8 @@ const isReadInput = document.querySelector('input[type="checkbox"]');
 // Modal Elements
 const openModalBtn = document.getElementById('open-modal')
 const addBookModal = document.getElementById('addBookModal')
-const closeModal = document.getElementById('closeModal')
+const closeModal = document.getElementById('closeModal-add')
+const closeModalEdit = document.getElementById('closeModal-edit')
 const editBookModal = document.getElementById('editBookModal')
 
 const library = [
@@ -56,6 +58,11 @@ function closeAddModal() {
     addBookModal.style.display = 'none'
 }
 
+function closeEditModal() {
+    editBookModal.style.display = 'none'
+}
+
+console.log('Outside')
 addBookBtn.addEventListener('click', () => {
     event.preventDefault(); // prevent the form from being submitted
 
@@ -82,6 +89,7 @@ function displayBooks() {
         const listContainer = document.createElement('div');
 
         listContainer.className = 'list-cont';
+        editBtn.setAttribute('id', 'edit-btn-list')
         editBtn.innerHTML = '<i class="fas fa-pen"></i>'
         deleteBtn.innerHTML = '<i class="fas fa-trash"></i>'
 
@@ -92,9 +100,7 @@ function displayBooks() {
         })
 
         // Edit Button in the list
-        editBtn.addEventListener('click', () => {
-            editBook(index)
-        })
+        editBtn.addEventListener('click', editBook.bind(null, index));
 
         // Create elements for the list
         const titlePara = document.createElement('p')
@@ -127,32 +133,37 @@ function displayBooks() {
 function editBook(index) {
     editBookModal.style.display = 'block'
 
-    const modalBody = document.querySelector('.modal-body')
-    const modalHead = document.querySelector('.modal-header')
-    const modalContent = document.querySelector('.modal-content')
-    const form = document.querySelector('form')
-    const editHeading = document.querySelector('h2')
-    // const titleInput = document.querySelector('input[placeholder="Title"]');
-    // const authorInput = document.querySelector('input[placeholder="Author"]');
-    // const pagesInput = document.querySelector('input[placeholder="Pages"]');
-    // const isReadInput = document.querySelector('input[type="checkbox"]');
-    // form.appendChild(titleInput)
-    editHeading.textContent = 'Edit Book'
-    modalHead.prepend(editHeading)
+    const editTitle = document.getElementById('edit-title')
+    const editAuthor = document.getElementById('edit-author')
+    const editPages = document.getElementById('edit-pages')
+    const editIsRead = document.getElementById('isReadEdit')
 
-    modalBody.appendChild(form)
-    modalContent.appendChild(modalHead)
-    modalContent.appendChild(modalBody)
+    closeModalEdit.addEventListener('click', () => {
+        closeEditModal()
+    })
 
-    editBookModal.appendChild(modalContent)
-    titleInput.value = library[index].title
-    authorInput.value = library[index].author
-    pagesInput.value = library[index].pages
-    isReadInput.checked = library[index].isRead
+    editTitle.value = library[index].title
+    editAuthor.value = library[index].author
+    editPages.value = library[index].pages
+    editIsRead.checked = library[index].isRead
+
+    editBookBtn.addEventListener('click', () => {
+        event.preventDefault(); // prevent the form from being submitted
+
+        // update the book object in the library array
+        library[index].title = editTitle.value;
+        library[index].author = editAuthor.value;
+        library[index].pages = editPages.value;
+        library[index].isRead = editIsRead.checked;
+
+        displayBooks()
+        closeEditModal()
+    }, { once: true })
+
 }
 
 function clearForm() {
-    form.reset()
+    addForm.reset()
 }
 
 displayBooks()

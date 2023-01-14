@@ -150,7 +150,8 @@ p {
 }
 
 /* Add Book Button */
-#add-book {
+#add-book,
+#edit-book {
     width: 400px;
     height: 55px;
     background: #665AA8;
@@ -163,7 +164,8 @@ p {
     transition: transform 0.2s ease-in-out;
 }
 
-#add-book:hover {
+#add-book:hover,
+#edit-book:hover {
     background-color: white;
     border: solid 1px #665AA8;
     color: #665AA8;

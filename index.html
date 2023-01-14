@@ -43,12 +43,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Add a New Book</h2>
-                <i class="fas fa-times" id="closeModal"></i>
+                <i class="fas fa-times" id="closeModal-add"></i>
             </div>
             <div class="modal-body">
 
                 <!-- Form content -->
-                <form>
+                <form id="add-form">
                     <input type="text" placeholder="Title">
                     <input type="text" placeholder="Author">
                     <input type="text" placeholder="Pages">
@@ -64,26 +64,26 @@
 
     <!-- Modal Edit Book -->
     <div class="modal" id="editBookModal">
-        <!-- <div class="modal-content">
+        <div class="modal-content">
             <div class="modal-header">
                 <h2>Edit Book</h2>
-                <i class="fas fa-times" id="closeModal"></i>
+                <i class="fas fa-times" id="closeModal-edit"></i>
             </div>
             <div class="modal-body">
 
-                
-                <form>
-                    <input type="text" placeholder="Title">
-                    <input type="text" placeholder="Author">
-                    <input type="text" placeholder="Pages">
+
+                <form id="edit-form">
+                    <input type="text" placeholder="Title" id="edit-title">
+                    <input type="text" placeholder="Author" id="edit-author">
+                    <input type="text" placeholder="Pages" id="edit-pages">
                     <div class="checkbox-cont">
                         <label for="isRead">Have you read this book?</label>
-                        <input type="checkbox" id="isRead">
+                        <input type="checkbox" id="isReadEdit">
                     </div>
-                    <button id="add-book">Edit Book</button>
+                    <button id="edit-book">Edit Book</button>
                 </form>
-            </div> -->
-    </div>
+            </div>
+        </div>
     </div>
 
 </body>
